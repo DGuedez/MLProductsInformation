@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/searchProductFragment"
-        android:name="com.david.mlproductinformation.search.presentation.SearchProductFragment"
+        android:name="com.david.mlproductinformation.search.presentation.SearchProductsFragment"
         android:label="fragment_search_product"
         tools:layout="@layout/fragment_search_product" />
 </navigation>
