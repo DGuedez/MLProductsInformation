@@ -2,6 +2,7 @@ package com.david.mlproductinformation.search.data.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.david.mlproductinformation.search.data.preferences.PreferenceConstants.KEY_PRODUCT_URL
 import com.david.mlproductinformation.search.data.preferences.PreferenceConstants.KEY_SEARCH_PRODUCT_QUERY
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -29,5 +30,13 @@ class ProductInfoPreferences  @Inject constructor(
 
     override fun getProductSearchQuery(): String {
         return preferences.getString(KEY_SEARCH_PRODUCT_QUERY, "").orEmpty()
+    }
+
+    override fun putProductDetailUrl(keyProductUrl: String) {
+       editAction { putString(KEY_PRODUCT_URL,keyProductUrl) }
+    }
+
+    override fun getProductDetailUrl(): String {
+        return preferences.getString(KEY_PRODUCT_URL, "").orEmpty()
     }
 }

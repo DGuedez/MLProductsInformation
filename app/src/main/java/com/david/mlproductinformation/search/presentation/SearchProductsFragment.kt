@@ -9,6 +9,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.david.mlproductinformation.databinding.FragmentSearchProductBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.SharedFlow
@@ -19,13 +20,13 @@ class SearchProductsFragment : Fragment() {
     private var _binding: FragmentSearchProductBinding? = null
     private val binding get() = _binding!!
     private val viewModel: SearchProductsViewModel by viewModels()
+    private val navigationAction = SearchProductsFragmentDirections.actionSearchProductFragmentToProductsFragment()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentSearchProductBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,7 +57,7 @@ class SearchProductsFragment : Fragment() {
     }
 
     private fun navigateToProductList() {
-        //TODO("Not yet implemented")
+        findNavController().navigate(navigationAction)
     }
 
 

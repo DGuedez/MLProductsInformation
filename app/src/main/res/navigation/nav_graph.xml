@@ -9,5 +9,13 @@
         android:id="@+id/searchProductFragment"
         android:name="com.david.mlproductinformation.search.presentation.SearchProductsFragment"
         android:label="fragment_search_product"
-        tools:layout="@layout/fragment_search_product" />
+        tools:layout="@layout/fragment_search_product" >
+        <action
+            android:id="@+id/action_searchProductFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.david.mlproductinformation.products.presentation.ProductsFragment"
+        android:label="ProductsFragment" />
 </navigation>
