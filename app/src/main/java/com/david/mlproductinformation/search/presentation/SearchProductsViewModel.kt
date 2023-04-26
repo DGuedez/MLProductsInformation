@@ -3,7 +3,6 @@ package com.david.mlproductinformation.search.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.david.mlproductinformation.common.utils.DispatchersProvider
-import com.david.mlproductinformation.common.utils.createExceptionHandler
 import com.david.mlproductinformation.search.domain.usecases.StoreToSearchProductUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -27,7 +26,6 @@ class SearchProductsViewModel @Inject constructor(
     private val _viewState  = MutableStateFlow(SearchProductViewState())
     private val _viewEffect  = MutableSharedFlow<SearchProductsViewEffects>()
 
-    private val exceptionHandler = viewModelScope.createExceptionHandler { onFailure(it) }
 
     fun onEvent(event:SearchProductEvent){
         when(event){
@@ -52,16 +50,10 @@ class SearchProductsViewModel @Inject constructor(
 
     private fun storeProduct(query: String) {
 
-        viewModelScope.launch(exceptionHandler) {
+        viewModelScope.launch {
             withContext(dispatchersProvider.io()){ storeToSearchUseCase.invoke(query) }
            _viewEffect.emit(SearchProductsViewEffects.NavigateToSearchProductsList)
         }
-
     }
-
-    private fun onFailure(throwable: Throwable){
-
-    }
-
 
 }

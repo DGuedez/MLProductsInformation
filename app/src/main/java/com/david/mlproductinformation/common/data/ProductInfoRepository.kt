@@ -3,10 +3,10 @@ package com.david.mlproductinformation.common.data
 
 import com.david.mlproductinformation.common.data.api.APIProductService
 import com.david.mlproductinformation.common.data.api.model.mappers.ApiRequestProductMapper
-import com.david.mlproductinformation.common.domain.NetworkException
 import com.david.mlproductinformation.common.data.preferences.Preferences
-import com.david.mlproductinformation.common.domain.repositories.ProductRepository
+import com.david.mlproductinformation.common.domain.NetworkException
 import com.david.mlproductinformation.common.domain.model.Product
+import com.david.mlproductinformation.common.domain.repositories.ProductRepository
 import retrofit2.HttpException
 import javax.inject.Inject
 

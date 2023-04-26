@@ -1,11 +1,11 @@
 package com.david.mlproductinformation.common.data.di
 
-import com.david.mlproductinformation.common.utils.CoroutineDispatcherProvider
-import com.david.mlproductinformation.common.utils.DispatchersProvider
 import com.david.mlproductinformation.common.data.ProductInfoRepository
 import com.david.mlproductinformation.common.data.preferences.Preferences
 import com.david.mlproductinformation.common.data.preferences.ProductInfoPreferences
 import com.david.mlproductinformation.common.domain.repositories.ProductRepository
+import com.david.mlproductinformation.common.utils.CoroutineDispatcherProvider
+import com.david.mlproductinformation.common.utils.DispatchersProvider
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

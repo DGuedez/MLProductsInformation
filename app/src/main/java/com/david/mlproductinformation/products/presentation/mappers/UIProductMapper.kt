@@ -1,8 +1,8 @@
 package com.david.mlproductinformation.products.presentation.mappers
 
-import com.david.mlproductinformation.common.presentation.UIMapper
 import com.david.mlproductinformation.common.domain.model.Installment
 import com.david.mlproductinformation.common.domain.model.Product
+import com.david.mlproductinformation.common.presentation.UIMapper
 import com.david.mlproductinformation.products.presentation.model.UIProduct
 import javax.inject.Inject
 

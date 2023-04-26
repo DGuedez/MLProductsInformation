@@ -1,7 +1,7 @@
 package com.david.mlproductinformation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.david.mlproductinformation.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
