@@ -52,8 +52,15 @@ class SearchProductsViewModel @Inject constructor(
 
         viewModelScope.launch {
             withContext(dispatchersProvider.io()){ storeToSearchUseCase.invoke(query) }
+            queryIsSaved()
            _viewEffect.emit(SearchProductsViewEffects.NavigateToSearchProductsList)
         }
+    }
+
+    private fun queryIsSaved() {
+        _viewState.value = viewState.value.copy(
+            loading = false
+        )
     }
 
 }
