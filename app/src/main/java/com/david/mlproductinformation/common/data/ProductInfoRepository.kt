@@ -31,7 +31,9 @@ class ProductInfoRepository @Inject constructor(
     }
 
     override suspend fun storeProductDetailUrl(keyProductUrl: String) {
-        preferences.putProductSearch(keyProductUrl)
+        preferences.putProductDetailUrl(keyProductUrl)
     }
+
+    override suspend fun getProductDetails(): String = preferences.getProductDetailUrl()
 
 }

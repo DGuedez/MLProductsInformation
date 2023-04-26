@@ -33,7 +33,7 @@ class ProductInfoPreferences  @Inject constructor(
     }
 
     override fun putProductDetailUrl(keyProductUrl: String) {
-       editAction { putString(KEY_PRODUCT_URL,keyProductUrl) }
+        editAction { putString( KEY_PRODUCT_URL, keyProductUrl) }
     }
 
     override fun getProductDetailUrl(): String {

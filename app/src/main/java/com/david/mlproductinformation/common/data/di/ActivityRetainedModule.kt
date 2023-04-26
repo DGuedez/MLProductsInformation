@@ -1,4 +1,4 @@
-package com.david.mlproductinformation.search.data.di
+package com.david.mlproductinformation.common.data.di
 
 import com.david.mlproductinformation.common.utils.CoroutineDispatcherProvider
 import com.david.mlproductinformation.common.utils.DispatchersProvider

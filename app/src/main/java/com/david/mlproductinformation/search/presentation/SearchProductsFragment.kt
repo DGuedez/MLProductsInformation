@@ -12,8 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.david.mlproductinformation.databinding.FragmentSearchProductBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.collect
+
 
 @AndroidEntryPoint
 class SearchProductsFragment : Fragment() {

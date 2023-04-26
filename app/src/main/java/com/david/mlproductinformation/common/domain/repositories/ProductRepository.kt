@@ -7,4 +7,6 @@ interface ProductRepository {
     suspend fun getProducts() : List<Product>
 
     suspend fun storeProductDetailUrl(keyProductUrl:String)
+
+    suspend fun getProductDetails(): String
 }

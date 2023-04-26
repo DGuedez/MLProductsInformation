@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.david.mlproductinformation.R
 import com.david.mlproductinformation.common.presentation.Event
@@ -21,7 +22,7 @@ class ProductsFragment : Fragment() {
     private var _binding: FragmentProductsListBinding? = null
     private val binding get() = _binding!!
     private val viewModel: ProductsViewModel by viewModels()
-
+    private val navigationAction = ProductsFragmentDirections.actionProductsFragmentToProductDetailsFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,7 +59,6 @@ class ProductsFragment : Fragment() {
         when (effects) {
             is ProductViewEffects.Failure -> handleFailure(effects.failure)
             ProductViewEffects.NavigateToProductDetails -> navigateToProductDetails()
-            else -> {}
         }
     }
 
@@ -74,7 +74,7 @@ class ProductsFragment : Fragment() {
     }
 
     private fun navigateToProductDetails() {
-        // navigate
+        findNavController().navigate(navigationAction)
     }
 
     private fun observeViewState(adapter: ProductsAdapter) {

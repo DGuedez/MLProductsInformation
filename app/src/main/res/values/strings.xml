@@ -16,6 +16,8 @@
     <string name="not_found_products">No hay productos para la búsqueda realizada. \n Será redirigido a la sección de búsqueda en 5 segundos.</string>
     <string name="default_failure_message">Ha ocurrido un error, por favor intente nuevamente.</string>
     <string name="found_product_has_not_details">No es posible ver los detalles de este producto. Intente con otro producto.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

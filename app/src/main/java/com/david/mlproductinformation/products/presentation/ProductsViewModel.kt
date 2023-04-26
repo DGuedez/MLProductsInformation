@@ -45,9 +45,8 @@ class ProductsViewModel @Inject constructor(
 
     private fun storeProductDetailUrl(detailUrl: String) {
         viewModelScope.launch(exceptionHandler) {
-            withContext(dispatchersProvider.io()) {
-                storeProductDetailsUrlUseCase(detailUrl)
-            }
+            withContext(dispatchersProvider.io()) { storeProductDetailsUrlUseCase(detailUrl)}
+            _viewEffect.emit(ProductViewEffects.NavigateToProductDetails)
         }
     }
 
