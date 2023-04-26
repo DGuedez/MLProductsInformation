@@ -39,6 +39,7 @@ android {
 }
 
 dependencies {
+    testImplementation 'junit:junit:4.12'
     def nav_version = "2.5.0"
     def retrofit_version = "2.9.0"
     def hilt_version = "2.42"
