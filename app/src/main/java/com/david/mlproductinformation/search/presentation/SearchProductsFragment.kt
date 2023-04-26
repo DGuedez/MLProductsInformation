@@ -21,7 +21,6 @@ class SearchProductsFragment : Fragment() {
     private val viewModel: SearchProductsViewModel by viewModels()
     private val navigationAction = SearchProductsFragmentDirections.actionSearchProductFragmentToProductsFragment()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

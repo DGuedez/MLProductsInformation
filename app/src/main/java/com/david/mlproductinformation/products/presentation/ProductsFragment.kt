@@ -15,6 +15,10 @@ import com.david.mlproductinformation.common.presentation.Event
 import com.david.mlproductinformation.databinding.FragmentProductsListBinding
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -22,7 +26,10 @@ class ProductsFragment : Fragment() {
     private var _binding: FragmentProductsListBinding? = null
     private val binding get() = _binding!!
     private val viewModel: ProductsViewModel by viewModels()
-    private val navigationAction = ProductsFragmentDirections.actionProductsFragmentToProductDetailsFragment()
+    private val navigationAction =
+        ProductsFragmentDirections.actionProductsFragmentToProductDetailsFragment()
+
+    private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -90,8 +97,23 @@ class ProductsFragment : Fragment() {
             productListRecyclerView.isVisible = viewState.showList
             productListNoProductsMessage.isVisible = viewState.productsNotFound
             adapter.submitList(viewState.products)
+            checkToReturnSection(viewState.productsNotFound)
         }
 
+    }
+
+    private fun checkToReturnSection(productsNotFound: Boolean) {
+        if (productsNotFound) {
+            coroutineScope.launch {
+                delay(5000)
+                returnToPreviousScreen()
+            }
+
+        }
+    }
+
+    private fun returnToPreviousScreen() {
+       activity?.onBackPressedDispatcher?.onBackPressed()
     }
 
     private fun setUpRecyclerView(productsListAdapter: ProductsAdapter) {
