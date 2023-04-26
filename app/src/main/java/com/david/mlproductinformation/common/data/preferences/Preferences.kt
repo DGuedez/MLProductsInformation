@@ -1,4 +1,4 @@
-package com.david.mlproductinformation.search.data.preferences
+package com.david.mlproductinformation.common.data.preferences
 
 interface Preferences {
 

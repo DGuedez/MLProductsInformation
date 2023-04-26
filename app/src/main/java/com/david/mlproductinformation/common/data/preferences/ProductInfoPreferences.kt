@@ -1,9 +1,9 @@
-package com.david.mlproductinformation.search.data.preferences
+package com.david.mlproductinformation.common.data.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.david.mlproductinformation.search.data.preferences.PreferenceConstants.KEY_PRODUCT_URL
-import com.david.mlproductinformation.search.data.preferences.PreferenceConstants.KEY_SEARCH_PRODUCT_QUERY
+import com.david.mlproductinformation.common.data.preferences.PreferenceConstants.KEY_PRODUCT_URL
+import com.david.mlproductinformation.common.data.preferences.PreferenceConstants.KEY_SEARCH_PRODUCT_QUERY
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
